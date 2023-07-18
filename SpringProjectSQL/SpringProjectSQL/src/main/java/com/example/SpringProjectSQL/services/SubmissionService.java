@@ -22,8 +22,9 @@ public class SubmissionService {
         return  submissionRepository.findAll();
     }
 
-    public void deleteSubmission(int id) {
+    public String  deleteSubmission(int id) {
         submissionRepository.deleteById(id);
+        return "Success";
     }
 
 
