@@ -1,29 +1,30 @@
 package com.example.SpringProjectSQL.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 
 @Entity
 @Data
+@Table(name="submission")
 public class Submission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String date;
-    private String technology;
-    private String vendor;
-    private String email;
-    private String mobile;
-    private String client;
-    private String implementation;
-    private String lead;
-    private String student;
-    private String recruiter;
-    private long payRate;
-    private Boolean submitted;
+    private int submission_id;
+    private int consultant_id;
+    private String submission_date;
+    private String vendor_company;
+    private String vendor_name;
+    private String vendor_email_address;
+    private String vendor_phone_number;
+    private String implementation_partner;
+    private String client_name;
+    private long pay_rate;
+    private String submission_status;
+    private String submission_type;
+    private String city;
+    private String state;
+   private String zip;
 
 }
+

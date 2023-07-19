@@ -28,10 +28,10 @@ public class SubmissionController {
         return submissionService.getSubmissionById(id);
     }
 
-    @GetMapping("/filter")
+    /*@GetMapping("/filter")
     public List<Submission> getSubmissionByLeadAndTechnology(@RequestParam String lead, @RequestParam String technology){
         return submissionService.getSubmissionByLeadAndTechnology(lead,technology);
-    }
+    }*/
     @DeleteMapping("/{id}")
     public String deleteSubmission(@PathVariable int id){
         submissionService.deleteSubmission(id);

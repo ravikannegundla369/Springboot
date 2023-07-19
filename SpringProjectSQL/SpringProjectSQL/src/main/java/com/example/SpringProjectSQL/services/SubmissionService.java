@@ -33,26 +33,29 @@ public class SubmissionService {
         return submissionRepository.findById(id).get();
     }
 
-    public List<Submission> getSubmissionByLeadAndTechnology(String lead, String technology) {
+   /* public List<Submission> getSubmissionByLeadAndTechnology(String lead, String technology) {
         return submissionRepository.findByLeadAndTechnology(lead,technology);
     }
-
+*/
     public Submission editSubmission(int id,Submission submissionDetails) {
         Submission submission = submissionRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("User not found"));
-        submission.setDate(submissionDetails.getDate());
-        submission.setTechnology(submissionDetails.getTechnology());
-        submission.setVendor(submissionDetails.getVendor());
-        submission.setEmail(submissionDetails.getEmail());
-        submission.setEmail(submissionDetails.getEmail());
-        submission.setMobile(submission.getMobile());
-        submission.setClient(submission.getClient());
-        submission.setImplementation(submission.getImplementation());
-        submission.setLead(submissionDetails.getLead());
-        submission.setStudent(submissionDetails.getStudent());
-        submission.setRecruiter(submissionDetails.getRecruiter());
-        submission.setPayRate(submissionDetails.getPayRate());
-        submission.setSubmitted(submissionDetails.getSubmitted());
+        submission.setSubmission_id(submissionDetails.getSubmission_id());
+        submission.setConsultant_id(submissionDetails.getConsultant_id());
+        submission.setSubmission_date(submissionDetails.getSubmission_date());
+        submission.setVendor_company(submissionDetails.getVendor_company());
+        submission.setVendor_name(submissionDetails.getVendor_name());
+        submission.setVendor_email_address(submission.getVendor_email_address());
+        submission.setVendor_phone_number(submission.getVendor_phone_number());
+        submission.setImplementation_partner(submission.getImplementation_partner());
+        submission.setClient_name(submissionDetails.getClient_name());
+        submission.setPay_rate(submissionDetails.getPay_rate());
+        submission.setSubmission_status(submissionDetails.getSubmission_status());
+        submission.setSubmission_type(submissionDetails.getSubmission_type());
+        submission.setCity(submissionDetails.getCity());
+        submission.setState(submissionDetails.getState());
+        submission.setZip(submissionDetails.getZip());
+
 
         return submission;
     }

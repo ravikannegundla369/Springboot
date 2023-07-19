@@ -190,6 +190,6 @@ WHERE ld.first_name = 'Vinay' AND s.submission_date = '2023-07-02';
 
 SELECT ld.id ,count(s.submission_id)
 FROM submission AS s
-JOIN consultant_detail AS cd ON s.consultant_id = cd.consultant_id
-JOIN lead_detail AS ld ON cd.lead_id = ld.id
+left JOIN consultant_detail AS cd ON s.consultant_id = cd.consultant_id
+left JOIN lead_detail AS ld ON cd.lead_id = ld.id
 Group By ld.id 
