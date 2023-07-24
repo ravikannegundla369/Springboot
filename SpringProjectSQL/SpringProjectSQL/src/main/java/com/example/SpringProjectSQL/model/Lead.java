@@ -3,6 +3,8 @@ package com.example.SpringProjectSQL.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 
 @Entity
 @Data
@@ -16,5 +18,7 @@ public class Lead {
     private String email_address;
     private String phone_number;
 
+    @OneToMany(mappedBy="lead", cascade = CascadeType.ALL)
+    private List<Consultant> consultantList;
 
 }

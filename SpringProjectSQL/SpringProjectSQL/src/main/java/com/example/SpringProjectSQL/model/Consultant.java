@@ -10,7 +10,9 @@ public class Consultant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int consultant_id;
-    private int lead_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="lead_id")
+    private Lead lead;
     private String first_name;
     private String last_name;
     private String email_address;
